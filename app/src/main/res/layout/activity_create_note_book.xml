@@ -16,4 +16,13 @@
         android:text="Name"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="284dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:w="@color/colorPrimary"
+        android:src="@drawable/note_shape"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="461dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

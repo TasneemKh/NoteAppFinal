@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splash1"></activity>
+        <activity android:name=".notebooksPage"></activity>
+        <activity android:name=".homePage" />
+        <activity android:name=".splash0" />
+        <activity android:name=".splash1" />
         <activity android:name=".mainSlide" />
         <activity android:name=".createNoteBook" />
         <activity android:name=".forgetpass" />

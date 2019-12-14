@@ -59,21 +59,4 @@
 
     </LinearLayout>
 
-    <RadioGroup
-        android:layout_width="38dp"
-        android:layout_height="65dp"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="623dp">
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RadioGroup>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
