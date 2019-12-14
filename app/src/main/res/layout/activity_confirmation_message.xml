@@ -55,7 +55,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="285dp" />
+        tools:layout_editor_absoluteY="285dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"

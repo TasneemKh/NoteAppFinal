@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="32dp"
     tools:ignore="MissingDefaultResource">
 
     <LinearLayout
@@ -24,7 +24,6 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:orientation="horizontal">
 
@@ -88,12 +87,12 @@
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
+            android:padding="16dp"
             android:text="Forgot password?" />
 
         <Button

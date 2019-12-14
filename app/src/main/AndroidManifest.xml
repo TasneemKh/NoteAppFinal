@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".splash1"></activity>
+        <activity android:name=".mainSlide" />
+        <activity android:name=".createNoteBook" />
+        <activity android:name=".forgetpass" />
+        <activity android:name=".confirmationMessage" />
+        <activity android:name=".signUp" />
+        <activity android:name=".signIn" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
