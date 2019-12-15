@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "164084136827",
-    "firebase_url": "https://noteappfinal-26.firebaseio.com",
-    "project_id": "noteappfinal-26",
-    "storage_bucket": "noteappfinal-26.appspot.com"
+    "project_number": "5904224314",
+    "firebase_url": "https://notefinal-20.firebaseio.com",
+    "project_id": "notefinal-20",
+    "storage_bucket": "notefinal-20.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:164084136827:android:0cb1f97559d4c8a669dbde",
+        "mobilesdk_app_id": "1:5904224314:android:870861c0c53bec1922a503",
         "android_client_info": {
           "package_name": "com.example.noteappfinal"
         }
       },
       "oauth_client": [
         {
-          "client_id": "164084136827-ggnoqdse9gro5itpeuc1aobhbqpm0hcj.apps.googleusercontent.com",
+          "client_id": "5904224314-jo5a45st97bhb58oc16p228pgum8oncv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBsQoKzzeq4rTGv6HOrBR6H-PuIdFeXKbM"
+          "current_key": "AIzaSyCU14JgNG7zvSyeDlbLETmw-pdWIdJ2PAA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "164084136827-ggnoqdse9gro5itpeuc1aobhbqpm0hcj.apps.googleusercontent.com",
+              "client_id": "5904224314-jo5a45st97bhb58oc16p228pgum8oncv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

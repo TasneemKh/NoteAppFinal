@@ -33,6 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.9"
+                android:paddingLeft="8dp"
                 android:text="Trip to San fran"
                 android:textColor="#000000"
                 android:textSize="18sp" />
