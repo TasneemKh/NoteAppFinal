@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Image" />
+        app:srcCompat="@drawable/image" />
 
     <TextView
         android:id="@+id/textView8"
@@ -59,11 +59,11 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/goToEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#7B1E58"
-        android:text="Recover password"
+        android:text="Go to Email"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

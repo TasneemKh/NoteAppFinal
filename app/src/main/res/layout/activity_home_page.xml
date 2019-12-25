@@ -8,6 +8,21 @@
     tools:context=".homePage">
 
 
+    <ImageButton
+        android:id="@+id/addNotebookFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:elevation="2dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/add"
+        tools:ignore="VectorDrawableCompat" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -43,7 +58,7 @@
                     android:gravity="right"
                     android:paddingEnd="8dp"
                     android:paddingRight="8dp"
-                    android:text="Done"
+                    android:text="Edit"
                     android:textColor="#7B1E58"
                     android:textSize="18sp" />
 
@@ -110,20 +125,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
                 <ImageButton
-                    android:id="@+id/imageButton5"
+                    android:id="@+id/addNotebook"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@null"
-                    app:srcCompat="@drawable/Addnotebook" />
+                    app:srcCompat="@drawable/addnotebook" />
 
                 <ImageButton
                     android:id="@+id/imageButton3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@null"
-                    app:srcCompat="@drawable/note_shape" />
+                    app:srcCompat="@drawable/note_shape"
+                    tools:ignore="VectorDrawableCompat" />
 
                 <ImageButton
                     android:id="@+id/imageButton4"
@@ -131,7 +147,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@null"
-                    app:srcCompat="@drawable/note_shape" />
+                    app:srcCompat="@drawable/note_shape"
+                    tools:ignore="VectorDrawableCompat" />
 
             </LinearLayout>
 
@@ -151,7 +168,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="Create Notebook" />
+                    android:inputType="textImeMultiLine"
+                    android:text="Create Notebook"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/textView17"
@@ -159,7 +178,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="Weekend Plans" />
+                    android:text="Weekend Plans"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/textView18"
@@ -167,7 +187,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="To-Do" />
+                    android:text="To-Do"
+                    android:textSize="12sp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -206,7 +227,9 @@
                     android:textSize="18sp" />
 
             </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/note_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

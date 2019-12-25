@@ -9,23 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".notebooksPage"></activity>
+        <activity android:name=".noteView"></activity>
+        <activity android:name=".mainSplash" />
+        <activity android:name=".notebooksPage" />
         <activity android:name=".homePage" />
         <activity android:name=".splash0" />
         <activity android:name=".splash1" />
-        <activity android:name=".mainSlide" />
-        <activity android:name=".createNoteBook" />
-        <activity android:name=".forgetpass" />
-        <activity android:name=".confirmationMessage" />
-        <activity android:name=".signUp" />
-        <activity android:name=".signIn" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".mainSlide" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".createNoteBook" />
+        <activity android:name=".forgetpass">
+
+        </activity>
+        <activity android:name=".confirmationMessage" />
+        <activity android:name=".signUp" />
+        <activity android:name=".signIn"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".WelcomeActivity" />
     </application>
 
 </manifest>
