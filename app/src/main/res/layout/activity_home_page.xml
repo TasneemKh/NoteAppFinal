@@ -23,224 +23,204 @@
         app:srcCompat="@drawable/add"
         tools:ignore="VectorDrawableCompat" />
 
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="horizontal"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp">
 
-            <LinearLayout
-                android:id="@+id/linearLayout0"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:paddingStart="0dp"
-                android:paddingEnd="0dp">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_weight=".2"
-                    app:srcCompat="@drawable/ic_indeterminate_check_box_black_24dp"
-                    tools:ignore="VectorDrawableCompat" />
-
-                <TextView
-                    android:id="@+id/showall"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2.8"
-                    android:gravity="right"
-                    android:paddingEnd="8dp"
-                    android:paddingRight="8dp"
-                    android:text="Edit"
-                    android:textColor="#7B1E58"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
+                android:layout_gravity="start"
+                android:layout_weight=".2"
+                app:srcCompat="@drawable/ic_indeterminate_check_box_black_24dp"
+                tools:ignore="VectorDrawableCompat" />
 
             <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
+                android:id="@+id/showall"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Browse"
+                android:layout_weight="2.8"
+                android:gravity="right"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:text="Edit"
+                android:textColor="#7B1E58"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#D8D8D8" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="93dp">
+
+            <TextView
+                android:id="@+id/View2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:text="Notebooks"
                 android:textColor="#000000"
-                android:textSize="30sp" />
+                android:textSize="18sp" />
 
-            <View
-                android:id="@+id/view"
+            <TextView
+                android:id="@+id/showAll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:text="show All"
+                android:textColor="#7B1E58"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Notebookx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="#D8D8D8" />
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:paddingStart="0dp"
-                android:paddingEnd="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="93dp">
-
-                <TextView
-                    android:id="@+id/View2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_weight="1"
-                    android:text="Notebooks"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/showAll"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingEnd="8dp"
-                    android:paddingRight="8dp"
-                    android:text="show All"
-                    android:textColor="#7B1E58"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+                android:layout_weight=".8"
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/addNotebook"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    app:srcCompat="@drawable/addnotebook" />
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    app:srcCompat="@drawable/note_shape"
-                    tools:ignore="VectorDrawableCompat" />
-
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@null"
-                    app:srcCompat="@drawable/note_shape"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_add_notebook"
                     tools:ignore="VectorDrawableCompat" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                 <TextView
                     android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:inputType="textImeMultiLine"
+                    android:inputType="textMultiLine|textImeMultiLine"
                     android:text="Create Notebook"
-                    android:textSize="12sp" />
+                    android:textSize="10sp" />
 
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text="Weekend Plans"
-                    android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text="To-Do"
-                    android:textSize="12sp" />
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="match_parent"
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+            <TextView
+                android:id="@+id/ViewNotes"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:paddingStart="0dp"
-                android:paddingEnd="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:text="Notes"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/ViewNotes"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_weight="1"
-                    android:text="Notes"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/showAll2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:text="show All"
+                android:textColor="#7B1E58"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/showAll2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingEnd="8dp"
-                    android:paddingRight="8dp"
-                    android:text="show All"
-                    android:textColor="#7B1E58"
-                    android:textSize="18sp" />
+        </LinearLayout>
 
-            </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
+        app:layout_constraintVertical_bias="0.060000002">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/note_rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
-
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

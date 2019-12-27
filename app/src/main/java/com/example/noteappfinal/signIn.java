@@ -40,7 +40,7 @@ public class signIn extends AppCompatActivity  implements View.OnClickListener {
         }*/
         if (mAuth.getCurrentUser()!=null)
         {
-            Intent intent = new Intent(signIn.this , MainActivity.class);
+            Intent intent = new Intent(signIn.this , homePage.class);
             startActivity(intent);
         }
         initializeUI();

@@ -3,12 +3,14 @@ package com.example.noteappfinal;
 import java.util.Date;
 
 public class NoteInfo {
-    String noteTit;
-    String noteTxt;
-    String color;
-    String id;
-    Date noteDate;
-    public NoteInfo(String id ,String noteTit,String noteTxt,String color,Date noteDate){
+    private String noteTit;
+    private String noteDate;
+    private String noteTxt;
+    private String color;
+    private String id;
+
+    public NoteInfo(){}
+    public NoteInfo(String id ,String noteTit,String noteTxt,String color,String noteDate){
         this.id=id;
         this.noteTit=noteTit;
         this.noteTxt=noteTxt;
@@ -47,13 +49,14 @@ public class NoteInfo {
         this.id = id;
     }
 
-    public Date getNoteDate() {
+    public String getNoteDate() {
         return noteDate;
     }
 
-    public void setNoteDate(Date noteDate) {
+    public void setNoteDate(String noteDate) {
         this.noteDate = noteDate;
     }
+
 
 
 }
