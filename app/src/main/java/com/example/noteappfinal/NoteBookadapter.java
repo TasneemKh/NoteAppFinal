@@ -34,8 +34,10 @@ public class NoteBookadapter  extends RecyclerView.Adapter<NoteBookadapter.NoteB
     @Override
     public void onBindViewHolder(@NonNull NoteBookadapter.NoteBookVh holder, int position) {
        // holder.image.setText(noteBook.get(position).getNoteBookPic());
-        holder.ImageTxt.setText(noteBooks.get(position).getNoteBookTxt());
-        Picasso.get().load(noteBooks.get(position).getNoteBookPic()).into(holder.image);
+        holder.ImageTxt.setText(noteBooks.get(position).getImageTxt());
+       // Picasso.get().load(noteBooks.get(position).getImage()).into(holder.image);
+       // image.setImageResource(R.drawable.monkey);
+
 
     }
 
@@ -57,16 +59,16 @@ public class NoteBookadapter  extends RecyclerView.Adapter<NoteBookadapter.NoteB
         }
         public void setData(final noteBook note) {
            // image.setImageResource(note.getNoteBookPic().toString());
-            ImageTxt.setText(note.getNoteBookTxt().toString());
+            ImageTxt.setText(note.getImageTxt().toString());
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, note.getNoteBookTxt(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, note.getImageTxt(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(itemView.getContext() ,noteBookView.class);
-                    intent.putExtra("image",note.getNoteBookPic());
-                    intent.putExtra("ImageTxt",note.getNoteBookTxt());
+                    intent.putExtra("image",note.getImage());
+                    intent.putExtra("ImageTxt",note.getImageTxt());
                     itemView.getContext().startActivity(intent);
                 }
             });

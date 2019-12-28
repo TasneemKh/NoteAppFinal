@@ -1,29 +1,31 @@
 package com.example.noteappfinal;
 
 public class noteBook {
-    private String noteBookPic;
-    private String noteBookTxt;
+    private String image;
+    private String ImageTxt;
+
+
+
     public noteBook(){}
-    public noteBook(String noteBookPic ,String noteBookTxt){
-        this.noteBookPic=noteBookPic;
-        this.noteBookTxt=noteBookTxt;
+    public noteBook(String image ,String ImageTxt){
+        this.image=image;
+        this.ImageTxt=ImageTxt;
     }
 
-    public String getNoteBookPic() {
-        return noteBookPic;
+    public String getImage() {
+        return image;
     }
 
-    public void setNoteBookPic(String noteBookPic) {
-        this.noteBookPic = noteBookPic;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getNoteBookTxt() {
-        return noteBookTxt;
+    public String getImageTxt() {
+        return ImageTxt;
     }
 
-    public void setNoteBookTxt(String noteBookTxt) {
-        this.noteBookTxt = noteBookTxt;
+    public void setImageTxt(String imageTxt) {
+        ImageTxt = imageTxt;
     }
-
 
 }

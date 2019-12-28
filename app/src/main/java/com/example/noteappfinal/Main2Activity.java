@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<NoteInfo> list;
@@ -31,48 +31,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         mAuth = FirebaseAuth.getInstance();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
-        findViewById(R.id.addNotebookFix).setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, noteView.class));
-            }
-        } );
-
-
+        String noteUid= uid+"frghj1542";
         findViewById(R.id.showAll).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, homePage.class));
+                startActivity(new Intent(Main2Activity.this, homePage.class));
             }
         });
-        reference = FirebaseDatabase.getInstance().getReference().child("notes").child(uid);
+        reference = FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid).child(noteUid);
         //.child("notes")
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<NoteInfo>();
-               if  (dataSnapshot.getChildrenCount()!=0){
-                   LinearLayout linearLayout = (LinearLayout) findViewById(R.id.noteBackground);
-                   linearLayout.setVisibility(View.INVISIBLE);
-                   for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
-                    list.add(p);
+                if  (dataSnapshot.getChildrenCount()!=0){
+                    LinearLayout linearLayout = (LinearLayout) findViewById(R.id.noteBackground);
+                    linearLayout.setVisibility(View.INVISIBLE);
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
+                        list.add(p);
+                    }
+                    adapter = new NoteAdapter(Main2Activity.this, list);
+                    recyclerView.setAdapter(adapter);
                 }
-                adapter = new NoteAdapter(MainActivity.this, list);
-                recyclerView.setAdapter(adapter);
-               }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MainActivity.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main2Activity.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }

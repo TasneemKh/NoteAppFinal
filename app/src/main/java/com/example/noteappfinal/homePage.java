@@ -39,23 +39,24 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_home_page);
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
-         uid = user.getUid();
+        uid = user.getUid();
 
 
         findViewById(R.id.addNotebookFix).setOnClickListener(this);
         findViewById(R.id.addNotebook).setOnClickListener(this);
+        findViewById(R.id.showAll).setOnClickListener(this);
         findViewById(R.id.showAll2).setOnClickListener(this);
-      //  initData();
+        //  initData();
     /*    note_rv = findViewById(R.id.note_rv);
         note_rv.setLayoutManager(new LinearLayoutManager(this));
        // NoteAdapter = new NoteAdapter(this ,noteList );
         note_rv.setAdapter(NoteAdapter);*/
         recyclerView = (RecyclerView) findViewById(R.id.note_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView0 =findViewById(R.id.Notebookx);
+        /*recyclerView0 =findViewById(R.id.Notebookx);
         LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(homePage.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView0.setLayoutManager(horizontalLayoutManagaer);
-        initData0();
+        initData0();*/
         initData1();
 
 
@@ -69,12 +70,12 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<NoteInfo>();
 
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
-                        list.add(p);
-                    }
-                    adapter = new NoteAdapter(homePage.this, list);
-                    recyclerView.setAdapter(adapter);
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
+                    list.add(p);
+                }
+                adapter = new NoteAdapter(homePage.this, list);
+                recyclerView.setAdapter(adapter);
 
             }
 
@@ -84,7 +85,7 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
             }
         });
     }
-    private void initData0() {
+   /* private void initData0() {
         reference = FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid);
         //.child("notes")
         reference.addValueEventListener(new ValueEventListener() {
@@ -106,17 +107,20 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
                 Toast.makeText(homePage.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addNotebookFix:
-                //startActivity(new Intent(this, mainSlide.class));
+                startActivity(new Intent(this, noteView.class));
                 break;
             case R.id.addNotebook:
-                //startActivity(new Intent(this, mainSlide.class));
+                startActivity(new Intent(this, createNoteBook.class));
+                break;
+            case R.id.showAll:
+                startActivity(new Intent(this, notebooksPage.class));
                 break;
             case R.id.showAll2:
                 startActivity(new Intent(this, MainActivity.class));

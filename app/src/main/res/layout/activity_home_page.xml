@@ -124,14 +124,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/Notebookx"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/create"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".8"
                 android:orientation="vertical">
@@ -158,6 +153,12 @@
 
 
             </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Notebookx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
