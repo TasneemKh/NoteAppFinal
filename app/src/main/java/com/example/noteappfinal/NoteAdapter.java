@@ -33,11 +33,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.noteVh> {
     }
     @Override
     public void onBindViewHolder(@NonNull noteVh holder, int position) {
-        //holder.setData(Notes.get(position));
-        holder.noteId.setText(Notes.get(position).getId());
+        holder.setData(Notes.get(position));
+       /* holder.noteId.setText(Notes.get(position).getId());
         holder.noteTitle.setText(Notes.get(position).getNoteTit());
         holder.noteTxt.setText(Notes.get(position).getNoteTxt());
-        holder.noteDate.setText(Notes.get(position).getNoteDate());
+        holder.noteDate.setText(Notes.get(position).getNoteDate());*/
   // Notes.get(position).getColor();
        // holder.noteCol.setColorFilter(Color.argb(255, 61, 16, 84));
 
@@ -69,7 +69,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.noteVh> {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(context, note.getNoteTit(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(itemView.getContext() ,noteView.class);
+                    Intent intent = new Intent(itemView.getContext() ,noteView2.class);
                     intent.putExtra("id",note.getId());
                     intent.putExtra("Title",note.getNoteTit());
                     intent.putExtra("Txt",note.getNoteTxt());
