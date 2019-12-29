@@ -60,17 +60,11 @@
 
         </LinearLayout>
 
-        <GridView
-            android:id="@+id/gridview"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleNoteBook"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnWidth="110dp"
-            android:gravity="center"
-            android:horizontalSpacing="10dp"
-            android:numColumns="auto_fit"
-            android:padding="16dp"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp" />
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
     <ImageButton

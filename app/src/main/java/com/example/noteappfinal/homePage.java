@@ -40,8 +40,6 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         uid = user.getUid();
-
-
         findViewById(R.id.addNotebookFix).setOnClickListener(this);
         findViewById(R.id.addNotebook).setOnClickListener(this);
         findViewById(R.id.showAll).setOnClickListener(this);
@@ -53,10 +51,10 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
         note_rv.setAdapter(NoteAdapter);*/
         recyclerView = (RecyclerView) findViewById(R.id.note_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        /*recyclerView0 =findViewById(R.id.Notebookx);
+        recyclerView0 =findViewById(R.id.Notebookx);
         LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(homePage.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView0.setLayoutManager(horizontalLayoutManagaer);
-        initData0();*/
+        initData0();
         initData1();
 
 
@@ -64,28 +62,24 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
 
     private void initData1() {
         reference = FirebaseDatabase.getInstance().getReference().child("notes").child(uid);
-        //.child("notes")
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<NoteInfo>();
-
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
                     list.add(p);
                 }
                 adapter = new NoteAdapter(homePage.this, list);
                 recyclerView.setAdapter(adapter);
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(homePage.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }
-   /* private void initData0() {
+    private void initData0() {
         reference = FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid);
         //.child("notes")
         reference.addValueEventListener(new ValueEventListener() {
@@ -107,7 +101,7 @@ public class homePage extends AppCompatActivity implements View.OnClickListener 
                 Toast.makeText(homePage.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
-    }*/
+    }
 
 
     @Override

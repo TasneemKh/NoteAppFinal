@@ -91,6 +91,7 @@ public class createNoteBook extends AppCompatActivity {
        // String x=new Date().getTime();
         data.put("createdAt",new Date().getTime());
         String id= UUID.randomUUID().toString();
+        data.put("id",id);
         //FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid).dataSnapshot.getChildrenCount();
         if(note_Tit != null) {
             FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid).child(id).setValue(data)

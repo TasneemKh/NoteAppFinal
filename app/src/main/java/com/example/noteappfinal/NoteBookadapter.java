@@ -34,8 +34,9 @@ public class NoteBookadapter  extends RecyclerView.Adapter<NoteBookadapter.NoteB
     @Override
     public void onBindViewHolder(@NonNull NoteBookadapter.NoteBookVh holder, int position) {
        // holder.image.setText(noteBook.get(position).getNoteBookPic());
-        holder.ImageTxt.setText(noteBooks.get(position).getImageTxt());
-       // Picasso.get().load(noteBooks.get(position).getImage()).into(holder.image);
+      //  holder.ImageTxt.setText(noteBooks.get(position).getImageTxt());
+        holder.setData(noteBooks.get(position));
+        // Picasso.get().load(noteBooks.get(position).getImage()).into(holder.image);
        // image.setImageResource(R.drawable.monkey);
 
 
@@ -49,26 +50,34 @@ public class NoteBookadapter  extends RecyclerView.Adapter<NoteBookadapter.NoteB
 
 
     class NoteBookVh extends RecyclerView.ViewHolder {
-        TextView ImageTxt;
+        TextView ImageTxt,id;
         ImageView image;
+
 
         public NoteBookVh(@NonNull View itemView) {
             super(itemView);
             ImageTxt=itemView.findViewById(R.id.ImageTxt);
             image=itemView.findViewById(R.id.image);
+            id=itemView.findViewById(R.id.id);
+
         }
         public void setData(final noteBook note) {
            // image.setImageResource(note.getNoteBookPic().toString());
             ImageTxt.setText(note.getImageTxt().toString());
+            id.setText(note.getId().toString());
+
+
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(context, note.getImageTxt(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(itemView.getContext() ,noteBookView.class);
+                    Intent intent = new Intent(itemView.getContext() ,Main2Activity.class);
                     intent.putExtra("image",note.getImage());
                     intent.putExtra("ImageTxt",note.getImageTxt());
+                  //  intent.putExtra("id",note.getId());
+
                     itemView.getContext().startActivity(intent);
                 }
             });

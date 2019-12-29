@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -26,46 +27,49 @@ public class Main2Activity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<NoteInfo> list;
     private FirebaseAuth mAuth;
-    NoteAdapter adapter;
+    NoteAdapter Adapter;
+    private static final String TAG = "Main2Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mAuth = FirebaseAuth.getInstance();
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
-        String noteUid= uid+"frghj1542";
+        //adapter.getItemId();
+        String id=getIntent().getStringExtra("id");
+
+       // Log.d(TAG,id);
+
         findViewById(R.id.showAll).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Main2Activity.this, homePage.class));
             }
         });
-        reference = FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid).child(noteUid);
+        /*recyclerView =findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        reference = FirebaseDatabase.getInstance().getReference().child("notebooks").child(uid).child(id).child("notes");
         //.child("notes")
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<NoteInfo>();
-                if  (dataSnapshot.getChildrenCount()!=0){
-                    LinearLayout linearLayout = (LinearLayout) findViewById(R.id.noteBackground);
-                    linearLayout.setVisibility(View.INVISIBLE);
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
-                        list.add(p);
-                    }
-                    adapter = new NoteAdapter(Main2Activity.this, list);
-                    recyclerView.setAdapter(adapter);
+
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    NoteInfo p = dataSnapshot1.getValue(NoteInfo.class);
+                    list.add(p);
                 }
+                Adapter = new NoteAdapter(Main2Activity.this, list);
+                recyclerView.setAdapter(Adapter);
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(Main2Activity.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 }
